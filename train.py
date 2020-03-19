@@ -61,9 +61,6 @@ def train_model(G, D, dataloader, num_epochs):
     g_optimizer = torch.optim.Adam(G.parameters(), g_lr, [beta1, beta2])
     d_optimizer = torch.optim.Adam(D.parameters(), d_lr, [beta1, beta2])
 
-    # loss function
-    criterion = nn.BCEWithLogitsLoss(reduction='mean')
-
     # hyperparameter
     z_dim = 20
     mini_batch_size = 64
